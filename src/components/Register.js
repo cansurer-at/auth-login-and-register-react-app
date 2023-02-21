@@ -61,9 +61,6 @@ const Register = () => {
                     withCredentials: true
                 }
             );
-            // TODO: remove console.logs before deployment
-            console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response))
             setSuccess(true);
             //clear state and controlled inputs
             setUser('');
@@ -171,7 +168,7 @@ const Register = () => {
                     <p>
                         Already registered?<br />
                         <span className="line">
-                            <Link to="/">Sign In</Link>
+                            <Link to="login">Sign In</Link>
                         </span>
                     </p>
                 </section>
