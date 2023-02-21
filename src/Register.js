@@ -61,9 +61,7 @@ const Register = () => {
       setErrMsg("Invalid Entry");
       return;
     }
-    setSuccess(true);
-
-    /*  try {
+    try {
       const response = await axios.post(
         REGISTER_URL,
         JSON.stringify({ user, pwd }),
@@ -76,18 +74,18 @@ const Register = () => {
       console.log(response.accessToken);
       console.log(JSON.stringify(response));
       setSuccess(true);
-      //clear input fields
+      //clear the input fields
     } catch (err) {
       if(!err?.response) {
         setErrMsg('No Server Response')
-      } else if (err.response?.status === 409) {
+      } else if (err.response?.status === 409) { 
         setErrMsg('Username Taken')
       } else {
         setErrMsg("Registration Failed");
       }
       errRef.current.focus();
     }
-    */
+    
   };
 
   useEffect(() => {
@@ -168,6 +166,7 @@ const Register = () => {
               id="password"
               onChange={(e) => setPwd(e.target.value)}
               value={pwd}
+              autoComplete="new-password"
               required
               aria-invalid={validPwd ? "false" : "true"}
               aria-describedby="pwdnote"
